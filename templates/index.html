@@ -19,11 +19,11 @@
     @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-50px); } }
 
     nav { position: sticky; top: 0; z-index: 20; display: flex; justify-content: space-between; align-items: center;
-          padding: 18px 8%; background: rgba(6, 9, 24, 0.7); backdrop-filter: blur(14px);
+          padding: 18px 6%; background: rgba(6, 9, 24, 0.7); backdrop-filter: blur(14px);
           border-bottom: 1px solid rgba(148, 163, 184, 0.12); }
     .logo { font-weight: 800; font-size: 24px; color: #38bdf8; }
-    nav ul { list-style: none; display: flex; gap: 12px; margin: 0; padding: 0; }
-    nav ul a { padding: 8px 18px; border-radius: 30px; font-size: 16px; font-weight: 500; transition: 0.3s; }
+    nav ul { list-style: none; display: flex; gap: 8px; margin: 0; padding: 0; flex-wrap: wrap; }
+    nav ul a { padding: 8px 16px; border-radius: 30px; font-size: 15px; font-weight: 500; transition: 0.3s; }
     nav ul a:hover { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
     nav ul a.cta { border: 1px solid #38bdf8; color: #38bdf8; }
 
@@ -93,6 +93,23 @@
     .edu .deg { margin: 2px 0; color: #7dd3fc; font-weight: 600; }
     .edu .yrs { margin: 0; color: #94a3b8; font-size: 16px; }
 
+    /* certifications */
+    .certs { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
+    .cert { background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(148,163,184,0.2); border-radius: 22px; padding: 28px;
+            backdrop-filter: blur(8px); transition: 0.3s; position: relative; overflow: hidden; }
+    .cert::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+                    background: linear-gradient(90deg, #38bdf8, #a78bfa, #f472b6); }
+    .cert:hover { transform: translateY(-8px); border-color: rgba(56,189,248,0.6); box-shadow: 0 22px 50px rgba(56,189,248,0.25); }
+    .cert-icon { width: 58px; height: 58px; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+                 background: linear-gradient(135deg, #0ea5e9, #7c3aed); box-shadow: 0 0 22px rgba(56,189,248,0.5); }
+    .cert-icon svg { width: 30px; height: 30px; }
+    .cert h3 { margin: 0 0 6px; font-size: 22px; color: white; line-height: 1.3; }
+    .cert .issuer { margin: 0; color: #7dd3fc; font-weight: 600; font-size: 15px; }
+    .cert .meta { margin: 4px 0 14px; color: #94a3b8; font-size: 14px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chips span { padding: 4px 14px; border-radius: 30px; font-size: 13px; font-weight: 600; color: #c4b5fd;
+                  border: 1px solid rgba(167,139,250,0.5); background: rgba(124,58,237,0.12); }
+
     .skills { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
     .skill { padding: 12px 30px; border-radius: 40px; background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(56,189,248,0.6);
              color: #7dd3fc; font-weight: 600; font-size: 17px; backdrop-filter: blur(6px); transition: 0.3s; }
@@ -154,6 +171,7 @@
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#education">Education</a></li>
+      <li><a href="#certifications">Certifications</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a class="cta" href="#contact">Contact</a></li>
@@ -168,7 +186,7 @@
       <p class="tag">Learning to build useful things with code.</p>
       <div class="btns">
         <a class="btn" href="#contact">Contact Me</a>
-        <a class="btn ghost" href="#projects">View Projects</a>
+        <a class="btn ghost" href="#certifications">View Certifications</a>
       </div>
       <div class="social">
         <a href="https://github.com/gurramrajesh229" target="_blank" rel="noopener">
@@ -196,7 +214,7 @@
   <section id="about" class="reveal">
     <span class="label">A LITTLE ABOUT ME</span>
     <h2>About Me</h2>
-    <p class="about">I am a B.Tech CSE (AI &amp; ML) student at Jain University. I am learning Python, Java and C, and I enjoy solving problems and turning ideas into small working projects.</p>
+    <p class="about">I am a B.Tech CSE (AI &amp; ML) student at Jain University. I am learning Python, Java and C, and I have completed LinkedIn Learning courses on Discrete Mathematics, Graph Neural Networks and Computer Architecture. I enjoy solving problems and turning ideas into small working projects.</p>
   </section>
 
   <section id="education" class="reveal">
@@ -216,6 +234,40 @@
     </div>
   </section>
 
+  <section id="certifications" class="reveal">
+    <span class="label">COURSES I COMPLETED</span>
+    <h2>Certifications</h2>
+    <div class="certs">
+      <div class="cert">
+        <div class="cert-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></svg>
+        </div>
+        <h3>Programming Foundations: Discrete Mathematics</h3>
+        <p class="issuer">LinkedIn Learning</p>
+        <p class="meta">Completed Sep 26, 2026 &nbsp;&bull;&nbsp; 3 hrs 9 min</p>
+        <div class="chips"><span>Discrete Mathematics</span><span>Programming Foundations</span></div>
+      </div>
+      <div class="cert">
+        <div class="cert-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></svg>
+        </div>
+        <h3>Learning Graph Neural Networks</h3>
+        <p class="issuer">LinkedIn Learning</p>
+        <p class="meta">Completed Sep 27, 2026 &nbsp;&bull;&nbsp; 2 hrs 13 min</p>
+        <div class="chips"><span>Neural Networks</span><span>Graph Networks</span><span>AI</span></div>
+      </div>
+      <div class="cert">
+        <div class="cert-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></svg>
+        </div>
+        <h3>Computer Architecture Essentials</h3>
+        <p class="issuer">LinkedIn Learning</p>
+        <p class="meta">Completed Sep 27, 2026 &nbsp;&bull;&nbsp; 4 hrs 47 min</p>
+        <div class="chips"><span>Programming Languages</span><span>Computer Hardware</span></div>
+      </div>
+    </div>
+  </section>
+
   <section id="skills" class="reveal">
     <span class="label">WHAT I WORK WITH</span>
     <h2>Skills</h2>
@@ -226,6 +278,9 @@
       <span class="skill">OOP</span>
       <span class="skill">HTML &amp; CSS</span>
       <span class="skill">Flask (Basic)</span>
+      <span class="skill">Discrete Mathematics</span>
+      <span class="skill">Neural Networks (Basics)</span>
+      <span class="skill">Computer Hardware</span>
       <span class="skill">Problem Solving</span>
       <span class="skill">Teamwork</span>
     </div>
